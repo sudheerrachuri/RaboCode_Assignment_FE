@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-submit-form',
-  templateUrl: './submit-form.component.html',
-  styleUrls: ['./submit-form.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class SubmitFormComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   constructor() { }
 
