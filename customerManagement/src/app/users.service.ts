@@ -13,16 +13,16 @@ const httpOptions = {
 })
 export class UsersService {
 
-  usersUrl = '/user/listofusers';
-  deleteUrl ='/user/deleteuser/{id}';
-  updateUrl = '/user/updateUser';
+  usersUrl = '/customerManagement/user/listofusers';
+  deleteUrl ='/customerManagement/user/removeuser/';
+  updateUrl = '/customerManagement/user/updateuser';
   constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<any>{
     return this.http.get<any>(this.usersUrl,httpOptions);
   }
-  deleteUserFromList(user): Observable<any>{
-    return this.http.delete<any>(this.deleteUrl,httpOptions);
+  deleteUserFromList(id): Observable<any>{
+    return this.http.delete<any>(this.deleteUrl+id,httpOptions);
   }
   updateAnUser(user): Observable<any>{
     return this.http.put<any>(this.updateUrl,user,httpOptions);

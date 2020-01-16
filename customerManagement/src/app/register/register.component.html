@@ -1,6 +1,5 @@
   <div class="container-fluid">
 
-    <!-- <div class="header">XYZ Company - Payroll Application</div> -->
     <br> <br> <br>
   
     <div class="row">
@@ -12,7 +11,7 @@
           <i class="fa fa-user" style="background-color: blue"></i>
           <b>&nbsp;SignUp</b>
         </h2>
-        <form [formGroup]="SignUpform" action="authenticate" method="post">
+        <form [formGroup]="userForm" action="authenticate" method="post">
   
           <div class="form-group">
             <label>Username</label>
@@ -21,7 +20,7 @@
   
           <div class="form-group">
             <label>MobileNumber</label>
-            <input type="text" formControlName="MobileNumber" class="form-control">
+            <input type="text" formControlName="mobileNumber" class="form-control">
           <!--   <div *ngIf="form.get('password').touched && form.get('password').invalid">
               <div *ngIf="form.get('password').errors.required" class="alert alert-danger">password is required</div>
   
@@ -42,9 +41,10 @@
           </div>
           <div  class="form-check" >
             <label>Gender:</label>
-            <!-- <input  formControlName="role" type="radio" value="1">Admin -->
-            <input  formControlName="gender" type="radio" value="1" >Male
-            <input  formControlName="gender" type="radio" value="2" >Female
+            <select>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
         </div>
          
           <div class="form-group">

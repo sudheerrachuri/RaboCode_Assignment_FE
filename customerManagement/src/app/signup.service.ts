@@ -13,7 +13,7 @@ const httpOptions = {
 })
 export class SignupService {
 
-  registerUrl = '/user/register'
+  registerUrl = '/customerManagement/user/register'
   constructor(private http: HttpClient) { }
 
   registerUser(userForm:any): Observable<any>{

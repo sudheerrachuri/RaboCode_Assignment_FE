@@ -31,13 +31,10 @@ export class RegisterComponent implements OnInit {
       mobileNumber: this.userForm.value.mobileNumber,
       email: this.userForm.value.email,
       language: this.userForm.value.language,
-      gender:{
-          id:this.userForm.value.gender
-      } 
+      gender: this.userForm.value.gender
     });
 
     this.signUpService.registerUser(json).subscribe(data => {
-      console.log(json);
       alert("succesfully registered");
     })
   }

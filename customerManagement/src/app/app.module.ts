@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { RegisteredUsersComponent } from './registered-users/registered-users.component';
 import { RegisterComponent } from './register/register.component';
 
@@ -13,12 +14,13 @@ import { RegisterComponent } from './register/register.component';
     AppComponent,
     HomeComponent,
     RegisterComponent,
-    RegisteredUsersComponent
+    RegisteredUsersComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

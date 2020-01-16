@@ -1,29 +1,62 @@
 <div class="container-fluid">
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="card-link" data-toggle="modal" data-target="#myModal">Edit</a>
-            <a href="#" class="card-link">Delete</a>
-        </div>
+    <div class="card" style="width: 18rem;" *ngFor="let user of usersList">
+      <div class="card-body">
+          <h5 class="card-title">{{user.name}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{user.gender}}</h6>
+          <p class="card-text">{{user.language}}</p>
+          <p class="card-text">{{user.mobileNumber}}</p>
+          <p class="card-text">{{user.email}}</p>
+          <a href="#" class="card-link" data-toggle="modal" (click)="editUser(user)" data-target="#myModal">Edit</a>
+          <a href='' class="card-link" (click)="delete(user)">Delete</a>
+      </div>
     </div>
 
-
-    <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
-
 <!-- Modal -->
+
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h4 class="modal-title">Update Information</h4>
       </div>
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+        <form [formGroup]="userForm" action="authenticate" method="post">
+  
+          <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" [(ngModel)]="currentUser.name" formControlName="name">
+          </div>
+  
+          <div class="form-group">
+            <label>MobileNumber</label>
+            <input type="text" formControlName="mobileNumber" [(ngModel)]="currentUser.mobileNumber" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" [(ngModel)]="currentUser.email" formControlName="email" class="form-control">
+          </div>
+         
+          <div class="form-group">
+            <label>Language</label>
+            <input type="text" formControlName="language" [(ngModel)]="currentUser.language" class="form-control">
+          </div>
+          <div  class="form-check" >
+            <label>Gender:</label>
+            <select [(ngModel)]="currentUser.gender" formControlName="gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+        </div>
+        <div class="form-group">
+          <input type="hidden" formControlName="id" [(ngModel)]="currentUser.id" class="form-control">
+        </div>
+         
+          <div class="form-group">
+            <input type="button"  class="btn btn-primary"  value="Update" (click)="update()"style="width: 100%">
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -32,4 +65,5 @@
 
   </div>
 </div>
+
 </div>
