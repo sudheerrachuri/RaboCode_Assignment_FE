@@ -13,11 +13,10 @@ const httpOptions = {
 })
 export class SignupService {
 
-  registerUrl = '/customerManagement/user/register'
+  registerUrl = '/customerManagement/user/registeruser'
   constructor(private http: HttpClient) { }
 
   registerUser(userForm:any): Observable<any>{
-    console.log(userForm);
     return this.http.post<any>(this.registerUrl,userForm,httpOptions)
 
   }

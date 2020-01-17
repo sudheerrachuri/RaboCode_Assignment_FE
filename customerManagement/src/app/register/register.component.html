@@ -21,14 +21,6 @@
           <div class="form-group">
             <label>MobileNumber</label>
             <input type="text" formControlName="mobileNumber" class="form-control">
-          <!--   <div *ngIf="form.get('password').touched && form.get('password').invalid">
-              <div *ngIf="form.get('password').errors.required" class="alert alert-danger">password is required</div>
-  
-              <div *ngIf="form.get('password').errors.minlength" class="alert alert-danger">Password must be minimum 2
-                characters</div>
-              <div *ngIf="form.get('password').errors.maxlength" class="alert alert-danger">Password must be maximun 8
-                characters</div>
-            </div> -->
           </div>
           <div class="form-group">
             <label>Email</label>
@@ -45,7 +37,7 @@
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
-        </div>
+          </div>
          
           <div class="form-group">
             <input type="button"  class="btn btn-primary"  value="SignUp" (click)="register()"style="width: 100%">
